@@ -16,17 +16,17 @@ TextTheme kDefaultTextTheme([Color textColor = Colors.black]) => TextTheme(
   headline3: GoogleFonts.poppins(
       color: textColor, fontSize: 46, fontWeight: FontWeight.w400),
   headline4: GoogleFonts.poppins(
-      color: textColor,
-      fontSize: 33,
-      fontWeight: FontWeight.w600,
-      letterSpacing: 0.25),
+      color: const Color(0xffe4e8ee),
+      fontSize: 38,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 0.15),
   headline5: GoogleFonts.poppins(
       color: textColor, fontSize: 23, fontWeight: FontWeight.w600),
   headline6: GoogleFonts.poppins(
-      color: textColor,
-      fontSize: 19,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 0.15),
+      color: const Color(0xffe4e8ee),
+      fontSize: 35,
+      fontWeight: FontWeight.w200,
+      letterSpacing: -1.0),
   subtitle1: GoogleFonts.poppins(
       color: textColor,
       fontSize: 15,

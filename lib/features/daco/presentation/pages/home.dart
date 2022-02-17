@@ -1,3 +1,4 @@
+import 'package:daco_login/features/daco/presentation/pages/sign_in.dart';
 import 'package:daco_login/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,13 +30,19 @@ class HomePage extends StatelessWidget {
               SvgPicture.asset(assetName,
                   color: null, semanticsLabel: 'A red up arrow'),
               Column(
-                children: const [
-                  Center(
-                    child: Text('Enterprise team'),
+                children:  [
+                  RichText(
+                    textAlign: TextAlign.center,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(text: 'Enterprise team\n'),
+                          TextSpan(text: 'collaboration')
+                        ]
+                      )
                   ),
-                  Center(
-                    child: Text('collaboration.'),
-                  ),
+                  // Center(
+                  //   child: Text('collaboration.'),
+                  // ),
                 ],
               ),
               Padding(
@@ -43,7 +50,9 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   children: const [
                     Center(
-                      child: Text('Bring together your files, your tools,'),
+                      child: Text('Bring together your files, your tools,',
+                        // textWidthBasis: TextWidthBasis.
+                      ),
                     ),
                     Center(
                       child: Text('projects and people. Including a new'),
@@ -54,40 +63,37 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        textStyle: const TextStyle(
-                          color: Colors.black,
-                        )
-                      ),
-                      child: const Text(
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            textStyle: const TextStyle(
+                              color: Colors.black,
+                            )),
+                        child: const Text(
                           'Register',
-                        style: TextStyle(
-                          color: Color(0xff29262E)
-                        ),
-                      )),
+                          style: TextStyle(color: Color(0xff29262E)),
+                        )),
+                    TextButton(
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SigninPage())),
+                        style: TextButton.styleFrom(
+                            backgroundColor: Color(0x0ff3B3A42),
+                            textStyle: const TextStyle()),
+                        child: const Text(
+                          'Sign In',
+                          style: TextStyle(color: Color(0xffF4F4F5)),
+                        )),
 
-                  TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                          backgroundColor: Color(0x0ff3B3A42),
-                          textStyle:  const TextStyle(
 
-                          )
-                      ),
-                      child: const Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: Color(0xffF4F4F5)
-                        ),
-                      )),
-                ],
+                  ],
+                ),
               ),
+
             ],
           ),
         ),
