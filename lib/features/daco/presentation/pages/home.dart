@@ -1,3 +1,4 @@
+import 'package:daco_login/features/daco/presentation/pages/register.dart';
 import 'package:daco_login/features/daco/presentation/pages/sign_in.dart';
 import 'package:daco_login/utils/theme.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     var kHeight = size.height;
     var kWidth = size.width;
+    var kTextTheme = kDefaultTextTheme();
 
     final String assetName = 'assets/static/collaboration-team-svgrepo-com.svg';
 
@@ -27,40 +29,45 @@ class HomePage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              SvgPicture.asset(assetName,
-                  color: null, semanticsLabel: 'A red up arrow'),
+              SvgPicture.asset(
+                  assetName,
+                  color: null,
+                  semanticsLabel: 'A red up arrow',
+                height: kHeight * 0.5,
+              ),
               Column(
                 children:  [
                   RichText(
                     textAlign: TextAlign.center,
                       text: TextSpan(
                         children: [
-                          TextSpan(text: 'Enterprise team\n'),
-                          TextSpan(text: 'collaboration')
+                          TextSpan(
+                              text: 'Enterprise team\ncollaboration.',
+                              style: kTextTheme.headline4,
+                          ),
+
                         ]
                       )
                   ),
-                  // Center(
-                  //   child: Text('collaboration.'),
-                  // ),
+
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Column(
-                  children: const [
-                    Center(
-                      child: Text('Bring together your files, your tools,',
-                        // textWidthBasis: TextWidthBasis.
-                      ),
-                    ),
-                    Center(
-                      child: Text('projects and people. Including a new'),
-                    ),
-                    Center(
-                      child: Text('mobile and desktop application'),
-                    ),
-                  ],
+                padding: const EdgeInsets.only(top: 20.0),
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text:  TextSpan(
+                    style: kTextTheme.bodyText1,
+                    children: [
+                      TextSpan(
+                        text: 'Bring together your files, your tools,\nprojects and people. Including a new\nmobile and desktop application',
+                        style: kTextTheme.bodyText1?.copyWith(
+                          letterSpacing: 0.1,
+                          height: 1.5
+                        )
+                      )
+                    ]
+                  ),
                 ),
               ),
               Expanded(
@@ -69,7 +76,7 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RegisterPage())),
                         style: TextButton.styleFrom(
                             backgroundColor: Colors.white,
                             textStyle: const TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // text theme for the application
@@ -38,10 +39,11 @@ TextTheme kDefaultTextTheme([Color textColor = Colors.black]) => TextTheme(
       fontWeight: FontWeight.w500,
       letterSpacing: 0.1),
   bodyText1: GoogleFonts.rubik(
-      color: textColor,
+      color: const Color(0xffBDC1C6).withOpacity(0.6),
       fontSize: 16,
       fontWeight: FontWeight.w400,
-      letterSpacing: 0.5),
+      letterSpacing: 0.5,
+  ),
   bodyText2: GoogleFonts.rubik(
       color: textColor,
       fontSize: 14,
@@ -67,6 +69,9 @@ TextTheme kDefaultTextTheme([Color textColor = Colors.black]) => TextTheme(
 ThemeData useDarkTheme(BuildContext context) => ThemeData.dark().copyWith(
   textTheme: kDefaultTextTheme(Colors.white),
   scaffoldBackgroundColor: const Color(0xff1A1720),
+  appBarTheme: const AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle.light
+  ),
   // colorScheme: const ColorScheme.dark().copyWith(
   //
   // )
