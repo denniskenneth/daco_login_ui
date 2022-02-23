@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(right: 10, left: 10),
+          padding: EdgeInsets.only(right: 24, left: 24),
           decoration: const BoxDecoration(
               // color: Colors.white,
 
@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
                           alignment: AlignmentDirectional.bottomStart,
                           children: [
                             Positioned(
-                              right: kWidth * 0.22,
+                              right: kWidth * 0.20,
                               child: TextButton(
                                   onPressed: () => Navigator.of(context).push(
                                       MaterialPageRoute(
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
                                   )),
                             ),
                             Positioned(
-                              left: kWidth * 0.23,
+                              left: kWidth * 0.20,
                               child: ElevatedButton(
                                   onPressed: () => Navigator.of(context).push(
                                       MaterialPageRoute(

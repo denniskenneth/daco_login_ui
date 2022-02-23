@@ -72,6 +72,8 @@ ThemeData useDarkTheme(BuildContext context) => ThemeData.dark().copyWith(
   appBarTheme: const AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle.light
   ),
+  textSelectionTheme: TextSelectionThemeData(
+  )
   // colorScheme: const ColorScheme.dark().copyWith(
   //
   // )

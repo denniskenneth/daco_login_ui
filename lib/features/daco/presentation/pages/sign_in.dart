@@ -1,3 +1,4 @@
+import 'package:daco_login/features/daco/presentation/pages/register.dart';
 import 'package:daco_login/utils/theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -36,8 +37,9 @@ class _SigninPageState extends State<SigninPage> {
           child: Container(
               width: kWidth,
               height: kHeight,
-              padding: EdgeInsets.only(left: 24.0,right: 24.0),
+
               child: SingleChildScrollView(
+                padding: EdgeInsets.only(left: 24.0, right: 24.0),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
                     minHeight: kHeight * 0.8,
@@ -46,21 +48,26 @@ class _SigninPageState extends State<SigninPage> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        // margin: EdgeInsets.only(top: 15),
-                        child: RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                              text: 'Let\'s sign you in.\n\n',
-                              style: kDefaultTextTheme().headline4,
-                            ),
-                            TextSpan(
-                              text: 'Welcome back.\nYou\'ve been missed!',
-                              style: kDefaultTextTheme().headline6,
-                            ),
-                            // TextSpan(text: 'You\'ve been missed.')
-                          ]),
-                        ),
+                      RichText(
+                        text: TextSpan(children: [
+                          TextSpan(
+                            text: '',
+                            style: kDefaultTextTheme().headline4,
+                            children: [
+                              TextSpan(text: 'Let\'s sign you in'),
+                              TextSpan(text: '.\n\n',
+                                style: kTextTheme.headline4?.copyWith(
+                                  color: const Color(0xff2296F3)
+                                )
+                              ),
+                            ]
+                          ),
+                          TextSpan(
+                            text: 'Welcome back.\nYou\'ve been missed!',
+                            style: kDefaultTextTheme().headline6,
+                          ),
+                          // TextSpan(text: 'You\'ve been missed.')
+                        ]),
                       ),
                       Column(
                         children: [
@@ -112,8 +119,11 @@ class _SigninPageState extends State<SigninPage> {
                               ),
                               TextSpan(
                                   text: 'Register',
+                                  style: kTextTheme.subtitle2?.copyWith(
+                                    color: const Color(0xff2296F3)
+                                  ),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () => print('Register'),
+                                    ..onTap = () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const RegisterPage())),
                               )
                             ]),
                           ),
