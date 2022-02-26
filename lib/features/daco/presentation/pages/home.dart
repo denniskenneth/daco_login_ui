@@ -119,93 +119,104 @@ class HomePage extends StatelessWidget {
                     ],
                   ));
             } else {
-              return Container(
-                height: kHeight + (kHeight * 0.3),
+              return SizedBox(
+                height: kHeight,
                 width: kWidth,
-                child: Column(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SvgPicture.asset(
-                      assetName,
-                      color: null,
-                      semanticsLabel: 'A red up arrow',
-                      height: kHeight * 0.5,
-                    ),
-                    Column(
-                      children: [
-                        RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(children: [
-                              TextSpan(
-                                text: 'Enterprise team\ncollaboration.',
-                                style: kTextTheme.headline4,
-                              ),
-                            ])),
-                      ],
-                    ),
-                    RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(style: kTextTheme.bodyText1, children: [
-                        TextSpan(
-                            text:
-                            'Bring together your files, your tools,\nprojects and people. Including a new\nmobile and desktop application',
-                            style: kTextTheme.bodyText1
-                                ?.copyWith(letterSpacing: 0.1, height: 1.5))
-                      ]),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: SvgPicture.asset(
+                          assetName,
+                          color: null,
+                          semanticsLabel: 'A red up arrow',
+                          height: kHeight * 0.8,
+                        ),
+                      ),
                     ),
                     Expanded(
-                      child: Stack(
-                        alignment: AlignmentDirectional.bottomStart,
-                        children: [
-                          Positioned(
-                            right: kWidth * 0.3,
-                            child: TextButton(
-                                onPressed: () => Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                        const SigninPage())),
-                                style: TextButton.styleFrom(
-                                  backgroundColor: Color(0x0ff3B3A42),
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 15, horizontal: 40),
-                                  textStyle: kTextTheme.bodyText1?.copyWith(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 12,
-                                      letterSpacing: 0.2),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: 'Enterprise team\ncollaboration.',
+                                      style: kTextTheme.headline4,
                                   ),
+                                ],
                                 ),
-                                child: const Text(
-                                  'Sign In',
-                                  style: TextStyle(color: Color(0xffF4F4F5)),
-                                )),
-                          ),
-                          Positioned(
-                            left: kWidth * 0.3,
-                            child: ElevatedButton(
-                                onPressed: () => Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                        const RegisterPage())),
-                                style: TextButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 15, horizontal: 40),
-                                  textStyle: kTextTheme.bodyText1?.copyWith(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 12,
-                                      letterSpacing: 0.2),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                child: const Text(
-                                  'Register',
-                                  style: TextStyle(color: Color(0xff29262E)),
-                                )),
-                          ),
-                        ],
-                      ),
+                            ),
+
+                            RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(style: kTextTheme.bodyText1, children: [
+                                TextSpan(
+                                    text:
+                                    'Bring together your files, your tools,\nprojects and people. Including a new\nmobile and desktop application',
+                                    style: kTextTheme.bodyText1
+                                        ?.copyWith(letterSpacing: 0.1, height: 1.5))
+                              ],
+                              ),
+                            ),
+                            SizedBox(
+                              width: double.infinity,
+                              height: kHeight * 0.18,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                TextButton(
+                                    onPressed: () => Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                            const SigninPage())),
+                                    style: TextButton.styleFrom(
+                                      backgroundColor: Color(0x0ff3B3A42),
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 30),
+                                      textStyle: kTextTheme.bodyText1?.copyWith(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12,
+                                          letterSpacing: 0.2),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Sign In',
+                                      style: TextStyle(color: Color(0xffF4F4F5)),
+                                    )),
+                                TextButton(
+                                    onPressed: () => Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                            const RegisterPage())),
+                                    style: TextButton.styleFrom(
+                                      backgroundColor: Colors.white,
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 30),
+                                      textStyle: kTextTheme.bodyText1?.copyWith(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12,
+                                          letterSpacing: 0.2),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Register',
+                                      style: TextStyle(color: Color(0xff29262E)),
+                                    )),
+                              ],
+                            ),
+                          ],
+                        ),
                     ),
                   ],
                 ),
