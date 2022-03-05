@@ -1,6 +1,10 @@
 import 'package:daco_login/core/app.dart';
 import 'package:flutter/material.dart';
 
+
+/// generate build files
+///
+/// flutter packages pub run build_runner watch --delete-conflicting-outputs
 void main() {
   runApp(const MyApp());
 }
